@@ -7,14 +7,15 @@ var chunks = []
 var readChunks = function() {
 
   contents = contents.toLowerCase();
-  for (var i = 0, x = contents.length; i < x; i++) {
+  outerLoop:
+  for (var i = 0, x = contents.length; i <= x; i++) {
     if (contents.charAt(i) === "{") {
       start = i + 1;
-      for (var i = start, x = contents.length; i < x; i++) {
-        if (contents.charAt(i) === "}") {
-            end = i;
+      for (var j = start; j <= x; j++) {
+        if (contents.charAt(j) === "}") {
+            end = j;
             chunks.push(contents.slice(start,end).trim());
-            start = end
+            continue outerLoop;
         }
       }
     }
@@ -26,7 +27,7 @@ var readChunks = function() {
 readChunks();
 
 // nur zum debuggen
-console.log(start);
-console.log(end);
-console.log(contents.charAt(start) + "-> zeichen bei i // " + contents.charAt(end) + "-> zeichen bei j");
+// console.log(start);
+// console.log(end);
+// console.log(contents.charAt(start) + "-> zeichen bei i // " + contents.charAt(end) + "-> zeichen bei j");
 console.log(chunks);
