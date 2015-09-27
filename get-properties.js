@@ -1,13 +1,13 @@
-var _ = require("underscore")
-,   chunks = []
-,   properties = []
-,   contents = "Dies ist eine { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; } der test wird noch toller { font-size: 0; margin-bottom: 0; list-style: none; font-size: 1rem; margin: 0px;} drrt"
-,   start
-,   end;
+var readProperties = function(contents) {
 
-var readChunks = function() {
+  var _ = require("underscore")
+  ,   chunks = []
+  ,   properties = []
+  ,   start
+  ,   end;
 
   contents = contents.toLowerCase();
+
   outerLoop:
   for (var i = 0, x = contents.length; i <= x; i++) {
     if (contents.charAt(i) === "{") {
@@ -22,9 +22,6 @@ var readChunks = function() {
     }
   }
 
-};
-
-var readProperties = function() {
   chunks.unshift(";");
   chunks = chunks.join(" ");
   outerLoop:
@@ -41,15 +38,8 @@ var readProperties = function() {
       }
   }
 
-};
-
-var cleanupProperties = function() {
   properties = _.uniq(properties);
+  return properties;
 };
 
-readChunks();
-readProperties();
-cleanupProperties();
-
-// console.log(chunks);
-console.log(properties);
+module.exports = readProperties;
