@@ -1,4 +1,4 @@
-will-that-work
+cuddly-weasel
 -------
 use this tool to check your css file for compatibility issues with different
 webbrowsers. based on the amazing database from [caniuse](http://caniuse.com/).
@@ -16,6 +16,9 @@ browsers you want to test for.`
 
 ### run
 
+``
+`cd will-that-work`
+`npm install`
 `node index.js`
 
 ABOUT
