@@ -7,7 +7,7 @@ var readProperties = function(contents) {
   ,   end;
 
   contents = contents.toLowerCase();
-
+  
   outerLoop:
   for (var i = 0, x = contents.length; i <= x; i++) {
     if (contents.charAt(i) === "{") {
