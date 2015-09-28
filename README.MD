@@ -7,14 +7,14 @@ USAGE
 -------
 ### install
 
-`git clone git@github.com:hundekoerper/cuddly-weasel.git`
-`cd cuddly-weasel`
-`npm install`
+`git clone git@github.com:hundekoerper/cuddly-weasel.git`  
+`cd cuddly-weasel`  
+`npm install`  
 
 ### configure
 
-`use the profile.json to set the path to your css-file and choose which
-browsers you want to test for.`
+`use the profile.json to set the path to your css-file and choose which`  
+`browsers you want to test for.`
 
 ### run
 
@@ -30,21 +30,21 @@ that can be optimized.
 
 ### supported browsers:
 
-Android Browser (v2.1 - 44)
-Blackberry Browser (v7 - 10)
-Chrome (v4 - 48)
-Chrome for Android (v44)
-Edge (v12 - 13)
-FireFox (v2 - 44)
-Firefox for Android (v40)
-Internet Explorer (v5.5 - 11)
-IE Mobile (v10-11)
-Opera (v9 - 34)
-Opera Mini (v5.0 - 8.0)
-Opera Mobile (v10 - 30)
-Safari (v3.1 - 9)
-iOS Safari (v3.2 - 9)
-UC Browser for Android (v9.9)
+Android Browser (v2.1 - 44)  
+Blackberry Browser (v7 - 10)  
+Chrome (v4 - 48)  
+Chrome for Android (v44)  
+Edge (v12 - 13)  
+FireFox (v2 - 44)  
+Firefox for Android (v40)  
+Internet Explorer (v5.5 - 11)  
+IE Mobile (v10-11)  
+Opera (v9 - 34)  
+Opera Mini (v5.0 - 8.0)  
+Opera Mobile (v10 - 30)  
+Safari (v3.1 - 9)  
+iOS Safari (v3.2 - 9)  
+UC Browser for Android (v9.9)  
 
 
 LICENSE
