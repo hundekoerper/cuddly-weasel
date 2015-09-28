@@ -7,6 +7,8 @@ USAGE
 -------
 ### install
 
+`git clone git@github.com:hundekoerper/cuddly-weasel.git`
+`cd cuddly-weasel`
 `npm install`
 
 ### configure
@@ -16,9 +18,6 @@ browsers you want to test for.`
 
 ### run
 
-``
-`cd will-that-work`
-`npm install`
 `node index.js`
 
 ABOUT
