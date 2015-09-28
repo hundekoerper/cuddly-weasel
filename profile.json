@@ -1,8 +1,8 @@
 {
-  "cssfilepath": "test.css",
+  "cssfilepath": "./example/example.css",
   "browsers": {
-    "ie" : 1,
-    "edge": 1,
+    "ie" : 0,
+    "edge": 0,
     "firefox": 0,
     "chrome": 0,
     "safari": 0,
@@ -10,7 +10,7 @@
     "ios_saf": 0,
     "op_mini": 0,
     "android": 0,
-    "bb": 1,
+    "bb": 0,
     "op_mob": 0,
     "and_chr": 0,
     "and_ff": 0,

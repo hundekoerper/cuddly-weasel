@@ -1,7 +1,10 @@
 var comepareProperties = function(usedproperties, database, profile) {
 
-  var matches = []
-  ,   browser = [];
+  var _ = require("underscore")
+      chalk = require("chalk")
+  ,   matches = []
+  ,   browser = []
+  ,   browsername = "";
 
   for (var bsr in profile.browsers) {
     if (profile.browsers[bsr] !== 0) {
@@ -18,100 +21,92 @@ var comepareProperties = function(usedproperties, database, profile) {
 
   if (matches.length === 0){
     console.log("==================");
-    console.log("there are no known compatibility issues in your css-file.")
+    console.log(chalk.green("there are no known compatibility issues in your css-file."));
+    console.log("==================");
+    console.log("");
+  } else if (browser.length === 0){
+    console.log("==================");
+    console.log(chalk.red("please select at least one browser in the profile.json."));
     console.log("==================");
     console.log("");
   } else {
     for(var i = 0, x = matches.length; i < x; i++) {
       console.log("==================");
-      console.log(matches[i]);
+      console.log(chalk.bold(matches[i]));
       console.log("==================");
       console.log(database.data[matches[i]].title);
       console.log("");
       console.log(database.data[matches[i]].description);
-      console.log("------------------");
+      console.log("");
 
       for (var j = 0, y = browser.length; j < y; j++){
 
+        console.log("");
         switch(browser[j]) {
           case "ie":
-          console.log("");
-          console.log("Internet Explorer compatibilty:");
+          browsername = "Internet Explorer";
           break;
           case "edge":
-          console.log("");
-          console.log("Edge compatibilty:");
+          browsername = "Edge";
           break;
           case "firefox":
-          console.log("");
-          console.log("Firefox compatibilty:");
+          browsername = "Firefox";
           break;
           case "chrome":
-          console.log("");
-          console.log("Chrome compatibilty:");
+          browsername = "Chrome";
           break;
           case "safari":
-          console.log("");
-          console.log("Safari compatibilty:");
+          browsername = "Safari";
           break;
           case "opera":
-          console.log("");
-          console.log("Opera compatibilty:");
+          browsername = "Opera";
           break;
           case "ios_saf":
-          console.log("");
-          console.log("iOS Safari compatibilty:");
+          browsername = "iOS Safari";
           break;
           case "op_mini":
-          console.log("");
-          console.log("Opera Mini compatibilty:");
+          browsername = "Opera Mini";
           break;
           case "android":
-          console.log("");
-          console.log("Android Browser compatibilty:");
+          browsername = "Android Browser";
           break;
           case "bb":
-          console.log("");
-          console.log("Blackberry Browser compatibilty:");
+          browsername = "Blackberry Browser";
           break;
           case "op_mob":
-          console.log("");
-          console.log("Opera Mobile compatibilty:");
+          browsername = "Opera Mobile";
           break;
           case "and_chr":
-          console.log("");
-          console.log("Chrome for Android compatibilty:");
+          browsername = "Chrome for Android";
           break;
           case "and_ff":
-          console.log("");
-          console.log("Firefox for Android compatibilty:");
+          browsername = "Firefox for Android";
           break;
           case "ie_mob":
-          console.log("");
-          console.log("IE Mobile compatibilty:");
+          browsername = "IE Mobile";
           break;
           case "and_uc":
-          console.log("");
-          console.log("UC Browser for Android compatibilty:");
+          browsername = "UC Browser for Android";
           break;
-        };
 
+        };
+        console.log(chalk.underline(browsername + " compatibilty:"));
         console.log("");
 
-        for (var value in database.data[matches[i]].stats[browser[j]]){
-          if (database.data[matches[i]].stats[browser[j]][value] === "y") {
-            console.log("Version " + value + ": supported");
-          } else if (database.data[matches[i]].stats[browser[j]][value] === "n") {
-            console.log("Version " + value + ": not supported");
-          } else {
-            console.log("Version " + value + ": partially supported");
-          }
+        for (var value in database.data[matches[i]].stats[browser[j]]) {
+            if (database.data[matches[i]].stats[browser[j]][value] === "y") {
+              console.log("Version " + value + ": " + chalk.green("supported"));
+            } else if (database.data[matches[i]].stats[browser[j]][value] === "n") {
+              console.log("Version " + value + ": " + chalk.red("not supported"));
+            } else {
+              console.log("Version " + value + ": " + chalk.yellow("partially supported"));
+            }
         };
 
       };
 
-      console.log("------------------");
-      console.log("Additional Notes:");
+      console.log("");
+      console.log(chalk.underline("Additional Notes:"));
       console.log("");
       console.log(database.data[matches[i]].notes);
       console.log("");

@@ -1,3 +1,50 @@
+will-that-work
+-------
+use this tool to check your css file for compatibility issues with different
+webbrowsers. based on the amazing database from [caniuse](http://caniuse.com/).
+
+USAGE
+-------
+### install
+
+`npm install`
+
+### configure
+
+`use the profile.json to set the path to your css-file and choose which
+browsers you want to test for.`
+
+### run
+
+`node index.js`
+
+ABOUT
+-------
+the core functionality seems too work, but additional testing needs to be done
+to ensure there aren't any major bugs. there are also some features that I would like
+to add in the future. first and foremost a way to choose specific browser-versions that
+you want to have checked. Besides this is my first program so I'm assuming there is a lot
+that can be optimized.
+
+### supported browsers:
+
+Android Browser (v2.1 - 44)
+Blackberry Browser (v7 - 10)
+Chrome (v4 - 48)
+Chrome for Android (v44)
+Edge (v12 - 13)
+FireFox (v2 - 44)
+Firefox for Android (v40)
+Internet Explorer (v5.5 - 11)
+IE Mobile (v10-11)
+Opera (v9 - 34)
+Opera Mini (v5.0 - 8.0)
+Opera Mobile (v10 - 30)
+Safari (v3.1 - 9)
+iOS Safari (v3.2 - 9)
+UC Browser for Android (v9.9)
+
+
 LICENSE
 -------
 
